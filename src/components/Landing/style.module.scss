@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 .landing {
     height: 100dvh;
     width: 100vw;
-    background-color: #e9e6e6;
+    background-color: #F7F0E8;
+    padding: 100px;
+
+    .heading {
+        h1 {
+            font-family: "Inria Serif", serif;
+            font-size: 90px;
+            font-weight: 600;
+            letter-spacing: -2px;
+        }
+    }
 }
