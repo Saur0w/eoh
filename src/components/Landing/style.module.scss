@@ -4,7 +4,9 @@
     height: 100dvh;
     width: 100vw;
     background-color: #F7F0E8;
-    padding: 100px;
+    padding: 200px;
+    position: relative;
+    z-index: 10;
 
     .heading {
         h1 {
