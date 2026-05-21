@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./style.module.scss";
+import Image from "next/image";
 
 export default function Landing() {
     return (
@@ -9,6 +10,9 @@ export default function Landing() {
                 <h1>Cultivating Stillness.<br />
                     Curating Nature</h1>
             </div>
-        </section>
+            <div className={styles.imageContainer}>
+                <Image src="/images/landing.webp" alt="landing" height={400} width={300} />
+            </div>        
+            </section>
     );
 }
