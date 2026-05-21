@@ -6,7 +6,8 @@ export default function Landing() {
     return (
         <section className={styles.landing}>
             <div className={styles.heading}>
-                <h1>Nature.<br />Ritual.<br />Restoration.</h1>
+                <h1>Cultivating Stillness.<br />
+                    Curating Nature</h1>
             </div>
         </section>
     );
