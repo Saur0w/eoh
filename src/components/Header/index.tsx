@@ -10,7 +10,14 @@ export default function Header() {
                 <div className={styles.logo}>
                     
                 </div>
+                <div className={styles.text}>
+                    <h1>ESSENCE OF HOPE<br />Deepkia Singh</h1>
+                </div>
             </div>
+
+            <nav className={styles.nav}>
+                <ul></ul>
+            </nav>
         </header>
     )
 }
