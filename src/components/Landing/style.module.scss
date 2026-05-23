@@ -14,7 +14,7 @@
     .tag {
         h5 {
             color: #D7B469;
-            font-family: 'Inter", sans serif';
+            font-family: 'Inter", sans serif', serif;
         }
     }
 
@@ -46,6 +46,20 @@
             color: #DDD2C4;
             font-family: "Playfair Display", serif;
             font-size: 20px;
+        }
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #595237;
+        height: 100px;
+        width: 300px;
+        border-radius: 10px;
+        a {
+            color: #fff;
+            text-decoration: none;
         }
     }
 }
