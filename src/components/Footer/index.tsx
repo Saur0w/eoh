@@ -20,8 +20,8 @@ export default function Footer() {
                 <div className={styles.links}>
                     <ul>
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about">About</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link href="/founder">Founder</Link></li>
+                        <li><Link href="/contact">Book a Consultation</Link></li>
                     </ul>
                 </div>
             </div>
