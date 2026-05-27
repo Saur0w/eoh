@@ -14,5 +14,15 @@ export default function MagneticWrapper({ children }: MagneticProps) {
     useGSAP(() => {
         if (!magneticRef.current) return;
         const element = magneticRef.current;
+        const xTo = gsap.quickTo(element, 'x', {
+            duration: 1,
+            ease: 'elastic.out(1, 0.3)'
+        });
+        const yTo = gsap.quickTo(element, 'y', {
+            duration: 1,
+            ease: 'elastic.out(1, 0.3)'
+        });
+
+
     })
 }
