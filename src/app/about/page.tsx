@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function About() {
     return (
         <section className={styles.about}>
-
+            <h1>EOH</h1>
         </section>
     );
 }
