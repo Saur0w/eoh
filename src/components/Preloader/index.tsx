@@ -53,7 +53,6 @@ export default function Preloader() {
                 <path fillRule="evenodd" clipRule="evenodd" d="M77.5992 13.0194L80.806 12.3927L84.0216 13.0194L80.806 13.6462L77.5992 13.0194Z" fill="#D7B46A"/>
                 <path fillRule="evenodd" clipRule="evenodd" d="M48.6586 96.8719L50.8171 96.451L52.9757 96.8719L50.8171 97.2927L48.6586 96.8719Z" fill="#D7B46A"/>
             </svg>
-
         </section>
     );
 }

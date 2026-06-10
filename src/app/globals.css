@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,
 body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overflow-x: hidden;
 }
