@@ -8,10 +8,11 @@ import { useRef } from "react";
 gsap.registerPlugin(useGSAP);
 
 interface PreloaderProps {
-    onComplete: () => void;
+    onReveal?: () => void;
+    onComplete?: () => void;
 }
 
-export default function Preloader({ onComplete }: PreloaderProps) {
+export default function Preloader({ onReveal, onComplete }: PreloaderProps) {
     const preloaderRef = useRef<HTMLDivElement | null>(null);
     const percentageRef = useRef<HTMLDivElement | null>(null);
     const splitPercentage = useRef<HTMLHeadingElement | null>(null);
@@ -48,12 +49,11 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
         tl.to(preloaderRef.current, {
             yPercent: -100,
-            duration: 1.2,
+            duration: 1.5,
             ease: "power4.inOut",
-            onStart: () => {
-                onComplete();
-            }
+            onStart: () => onReveal?.(),
         });
+        tl.call(() => onComplete?.());
 
     }, {
         scope: preloaderRef,

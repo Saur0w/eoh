@@ -8,11 +8,18 @@ import { useState } from 'react';
 
 
 export default function Home() {
-  const [isPreloaderDone, setIsPreloaderDone] = useState(false);
+  const [isRevealing, setIsRevealing] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
+
   return (
     <div className={styles.page}>
-        <Preloader />
-        <Landing />
+        {showPreloader && (
+          <Preloader
+            onReveal={() => setIsRevealing(true)}
+            onComplete={() => setShowPreloader(false)}
+          />
+        )}
+        <Landing isRevealing={isRevealing} />
         <Footer />
     </div>
   );
