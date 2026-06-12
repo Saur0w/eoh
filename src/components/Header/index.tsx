@@ -16,8 +16,15 @@ export default function Header() {
             </div>
 
             <nav className={styles.nav}>
-                <ul></ul>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                </ul>
             </nav>
+
+            <div className={styles.btn}>
+                <Link href="/contact">Book a Consultation</Link>
+            </div>
         </header>
     )
 }
