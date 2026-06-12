@@ -36,9 +36,16 @@ export default function Preloader() {
         });
 
         tl.to(svgRef.current, {
+            scale: 1.5,
             opacity: 0,
-            duration: 0.5,
-            ease: "power2.inOut",
+            duration: 0.8,
+            ease: "power3.inOut",
+        });
+
+        tl.to(preloaderRef.current, {
+            yPercent: -100,
+            duration: 1.5,
+            ease: "power4.inOut"
         });
 
     }, {
