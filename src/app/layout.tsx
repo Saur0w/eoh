@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroller from "@/components/SmoothScroller";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Essence of Hope Portfolio",
-  description: "A showcase of creative works and projects dedicated to the Essence of Hope.",
+  title: "Essence of Hope — Cultivating Stillness, Curating Nature",
+  description: "A soulful expression of beauty. Thoughtfully created to bring peace, grace, and meaning into everyday life.",
 };
 
 export default function RootLayout({
@@ -24,7 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroller>
+          <CustomCursor />
+          {children}
+        </SmoothScroller>
+      </body>
     </html>
   );
 }

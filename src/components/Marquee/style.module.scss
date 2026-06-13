@@ -1,0 +1,54 @@
+.marquee {
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--color-charcoal);
+    padding: 50px 0;
+    position: relative;
+
+    // Gradient fade on edges
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-charcoal), transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-charcoal), transparent);
+    }
+
+    .track {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        will-change: transform;
+    }
+
+    .item {
+        font-family: var(--font-serif);
+        font-size: clamp(40px, 5vw, 72px);
+        color: var(--color-cream);
+        font-weight: 400;
+        padding: 0 30px;
+        flex-shrink: 0;
+        letter-spacing: -1px;
+        font-style: italic;
+
+        &.dot {
+            font-size: clamp(20px, 2vw, 32px);
+            color: var(--color-gold);
+            font-style: normal;
+            padding: 0 20px;
+        }
+    }
+}

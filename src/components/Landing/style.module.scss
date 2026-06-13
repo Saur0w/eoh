@@ -4,8 +4,9 @@
 .landing {
     height: 100dvh;
     width: 100vw;
-    background-color: #F7F0E8;
-    padding: 200px;
+    background-color: var(--color-cream);
+    padding: var(--section-padding);
+    padding-top: 160px;
     position: relative;
     z-index: 10;
     display: flex;
@@ -13,42 +14,68 @@
     gap: 50px;
     transform-origin: center center;
     backface-visibility: hidden;
+    overflow: hidden;
 
     .tag {
         h5 {
-            color: #D7B469;
-            font-family: "Inter", sans-serif;
+            color: var(--color-gold);
+            font-family: var(--font-sans);
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 400;
         }
     }
 
     .heading {
+        overflow: hidden;
+        
         h1 {
-            font-family: "Playfair Display", serif;
-            font-size: 64px;
+            font-family: var(--font-serif);
+            font-size: clamp(42px, 5vw, 72px);
             font-weight: 400;
             letter-spacing: -2px;
+            line-height: 1.1;
+            color: var(--color-charcoal);
         }
+    }
+
+    // For SplitText lines — each line is wrapped and clipped
+    :global(.splitLine) {
+        overflow: hidden;
+        padding-bottom: 4px;
     }
 
     .imageContainer {
         position: absolute;
         top: 0;
         right: 0;
+        height: 100%;
+        width: 45%;
+        overflow: hidden;
+        clip-path: inset(0% 0% 0% 0%);
+
         img {
             object-fit: cover;
+            width: 100%;
+            height: 120%; // Extra height for parallax
+            will-change: transform;
         }
     }
+
     .line {
-        background-color: #DDD2C4;
+        background-color: var(--color-tan);
         height: 1px;
         width: 500px;
+        max-width: 40%;
     }
 
     .para {
         p {
-            color: #DDD2C4;
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
+            color: var(--color-olive);
+            font-family: var(--font-serif);
+            font-size: clamp(16px, 1.3vw, 20px);
+            line-height: 1.7;
+            font-style: italic;
         }
     }
 
@@ -56,15 +83,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #595237;
-        height: 100px;
-        width: 300px;
-        border-radius: 10px;
-        gap: 20px;
+        background-color: var(--color-olive);
+        height: 70px;
+        width: 280px;
+        border-radius: 8px;
+        gap: 16px;
+        transition: background-color 0.4s ease, transform 0.3s ease;
+
+        &:hover {
+            background-color: var(--color-olive-dark);
+            transform: translateY(-2px);
+        }
+
         a {
             color: #fff;
             text-decoration: none;
-            font-family: "Inter", sans-serif;
+            font-family: var(--font-sans);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     }
 }
