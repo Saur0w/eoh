@@ -81,8 +81,9 @@ export default function About() {
 
     return (
         <section className={styles.about} ref={sectionRef}>
+            <span className={styles.bgIndex} aria-hidden="true">02</span>
             <div className={styles.content}>
-                <span className={styles.label} ref={labelRef}>— OUR PHILOSOPHY</span>
+                <span className={styles.label} ref={labelRef}>02 — Our Philosophy</span>
                 <p className={styles.text} ref={textRef}>
                     We believe in the quiet power of nature — in the way a single bloom can 
                     shift energy, how stillness invites clarity, and the way thoughtful spaces 

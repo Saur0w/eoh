@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: clamp(16px, 2.5vw, 24px) clamp(24px, 4vw, 48px);
   mix-blend-mode: difference;
 
   .title {
@@ -18,12 +18,12 @@
     .text {
       h1 {
         font-family: var(--font-sans);
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 400;
-        letter-spacing: 2px;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
         color: #fff;
-        line-height: 1.5;
+        line-height: 1.6;
       }
     }
   }
@@ -31,24 +31,38 @@
   .nav {
     ul {
       display: flex;
-      gap: 40px;
+      gap: clamp(24px, 4vw, 48px);
       list-style: none;
 
       li {
         a {
           font-family: var(--font-sans);
-          font-size: 13px;
+          font-size: 11px;
           font-weight: 300;
           color: #fff;
           text-decoration: none;
-          letter-spacing: 1px;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
-          transition: opacity 0.3s ease;
           display: inline-block;
-          padding: 8px;
+          padding: 8px 0;
+          position: relative;
 
-          &:hover {
-            opacity: 0.6;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right center;
+            transition: transform 0.5s var(--ease-out-expo);
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            transform-origin: left center;
           }
         }
       }
@@ -58,22 +72,31 @@
   .btn {
     a {
       font-family: var(--font-sans);
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 400;
       color: #fff;
       text-decoration: none;
-      letter-spacing: 1px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      padding: 12px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 30px;
-      transition: all 0.4s ease;
+      padding: 14px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 100px;
+      transition: background-color 0.5s var(--ease-out-expo),
+                  border-color 0.5s var(--ease-out-expo);
       display: inline-block;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.7);
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .nav {
+      display: none;
     }
   }
 }

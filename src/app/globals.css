@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-  /* Color Palette */
   --color-cream: #F7F0E8;
   --color-cream-light: #F9F7F2;
   --color-gold: #D7B469;
@@ -15,23 +14,21 @@
   --color-white: #ffffff;
   --color-accent: #4B5EE4;
 
-  /* Typography */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 
-  /* Spacing */
   --section-padding: clamp(40px, 8vw, 200px);
   --section-padding-y: clamp(80px, 12vh, 200px);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  /* Lenis handles smooth scroll */
 }
 
 html::-webkit-scrollbar,
@@ -46,30 +43,45 @@ body {
   overflow-x: hidden;
   background-color: var(--color-cream);
   cursor: none;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selection */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
 ::selection {
   background-color: var(--color-gold);
   color: var(--color-black);
 }
 
-/* Hide cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
   html, body {
     cursor: auto;
   }
+
+  body::after {
+    opacity: 0.02;
+  }
 }
 
-/* Smooth image rendering */
 img {
   -webkit-user-drag: none;
   user-select: none;
 }
 
-/* Link reset */
 a {
   cursor: none;
+  color: inherit;
 }
 
 button {

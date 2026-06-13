@@ -11,12 +11,27 @@
         padding: 80px var(--section-padding) 40px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
+
+        .headerTop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .progress {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--color-olive);
+            font-variant-numeric: tabular-nums;
+        }
 
         .label {
             font-family: var(--font-sans);
-            font-size: 12px;
-            letter-spacing: 3px;
+            font-size: 11px;
+            letter-spacing: 0.35em;
             color: var(--color-gold);
             text-transform: uppercase;
             font-weight: 400;
@@ -24,11 +39,12 @@
 
         .heading {
             font-family: var(--font-serif);
-            font-size: clamp(36px, 4vw, 56px);
+            font-size: clamp(40px, 5vw, 72px);
             font-weight: 400;
             color: var(--color-charcoal);
-            letter-spacing: -1px;
+            letter-spacing: -0.03em;
             overflow: hidden;
+            line-height: 1.05;
         }
     }
 
@@ -43,13 +59,17 @@
         flex-shrink: 0;
         width: clamp(320px, 28vw, 420px);
         position: relative;
-        transition: transform 0.4s ease;
+        transition: transform 0.6s var(--ease-out-expo);
 
         &:hover {
-            transform: translateY(-8px);
+            transform: translateY(-12px);
 
             .cardImage img {
-                transform: scale(1.08);
+                transform: scale(1.1);
+            }
+
+            .cardContent h3 {
+                color: var(--color-gold-dark);
             }
         }
 
@@ -88,6 +108,7 @@
                 font-weight: 400;
                 color: var(--color-charcoal);
                 letter-spacing: -0.5px;
+                transition: color 0.4s var(--ease-out-expo);
             }
 
             p {

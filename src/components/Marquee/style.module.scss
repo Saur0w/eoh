@@ -2,8 +2,10 @@
     width: 100vw;
     overflow: hidden;
     background-color: var(--color-charcoal);
-    padding: 50px 0;
+    padding: clamp(36px, 6vh, 64px) 0;
     position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
     // Gradient fade on edges
     &::before,

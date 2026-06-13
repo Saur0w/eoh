@@ -25,7 +25,7 @@ export default function Header() {
             yPercent: 0,
             duration: 1,
             ease: "power3.out",
-            delay: 4.5,
+            delay: 5.2,
         });
 
         // Hide on scroll down, show on scroll up

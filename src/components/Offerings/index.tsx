@@ -41,6 +41,7 @@ export default function Offerings() {
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
+    const progressRef = useRef<HTMLSpanElement>(null);
 
     useGSAP(() => {
         // Heading split text reveal
@@ -80,6 +81,15 @@ export default function Offerings() {
                 pin: true,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                    if (progressRef.current) {
+                        const current = Math.min(
+                            SERVICES.length,
+                            Math.max(1, Math.ceil(self.progress * SERVICES.length))
+                        );
+                        progressRef.current.textContent = `${current.toString().padStart(2, "0")} / ${SERVICES.length.toString().padStart(2, "0")}`;
+                    }
+                },
             },
         });
 
@@ -104,7 +114,10 @@ export default function Offerings() {
     return (
         <section className={styles.offerings} ref={sectionRef}>
             <div className={styles.header}>
-                <span className={styles.label}>— WHAT WE OFFER</span>
+                <div className={styles.headerTop}>
+                    <span className={styles.label}>03 — What We Offer</span>
+                    <span className={styles.progress} ref={progressRef}>01 / 04</span>
+                </div>
                 <h2 className={styles.heading} ref={headingRef}>Ways to work together</h2>
             </div>
             <div className={styles.track} ref={trackRef}>

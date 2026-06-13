@@ -4,20 +4,83 @@
   left: 0;
   z-index: 100;
   height: 100vh;
-  background: #ede9e9;
   width: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .percentage {
+  pointer-events: all;
+
+  .panelLeft,
+  .panelRight {
     position: absolute;
-    left: 5%;
-    top: 50%;
-    font-size: 15px;
-    color: #151515;
-    font-variant-numeric: tabular-nums;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--color-charcoal);
+    z-index: 1;
+  }
+
+  .panelLeft {
+    left: 0;
+  }
+
+  .panelRight {
+    right: 0;
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: var(--color-cream);
+  }
+
+  .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-olive);
+    font-weight: 400;
+  }
+
+  .counter {
+    display: flex;
+    align-items: flex-start;
     overflow: hidden;
-    background: transparent;
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 400;
+      color: var(--color-charcoal);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .percentSign {
+      font-family: var(--font-sans);
+      font-size: clamp(18px, 2vw, 28px);
+      color: var(--color-gold);
+      margin-top: clamp(16px, 2vw, 28px);
+      letter-spacing: 0.05em;
+    }
+  }
+
+  svg {
+    opacity: 0.9;
+  }
+
+  .logo {
+    opacity: 0.95;
+
+    img {
+      width: clamp(80px, 10vw, 120px);
+      height: auto;
+    }
   }
 }

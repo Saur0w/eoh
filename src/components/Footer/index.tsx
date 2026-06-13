@@ -86,6 +86,7 @@ export default function Footer() {
 
     return (
         <footer className={styles.footer} ref={footerRef}>
+            <span className={styles.watermark} aria-hidden="true">Essence</span>
             <div className={styles.top}>
                 <div className={styles.heading}>
                     <h1 ref={headingRef}>Let&#39;s craft an experience together.</h1>
