@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Landing from "@/components/Landing";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
+import Offerings from "@/components/Offerings";
 import { useState } from 'react';
 
 
@@ -20,6 +21,7 @@ export default function Home() {
           />
         )}
         <Landing isRevealing={isRevealing} />
+        <Offerings />
         <Footer />
     </div>
   );
